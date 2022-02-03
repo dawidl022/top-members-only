@@ -1,4 +1,7 @@
-<h1>Members Only!</h1>
 <h2>Secret Blog</h2>
 
 <%= render @posts %>
+
+<% if user_signed_in? %>
+  <%= link_to 'Write a new post', new_posts_path %>
+<% end %>

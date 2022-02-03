@@ -1,7 +1,15 @@
-<%= post.title %>
-<%= post.content %>
-<% if user_signed_in? %>
-  <%= post.user.name %>
-<% else %>
-  <%= post.anonymous_name %>
-<% end %>
+<div class="post">
+  <header>
+    <h3 class="title"><%= post.title %></h3>
+  </header>
+  <div class="content">
+    <%= post.content %>
+  </div>
+  <footer class="author">
+    &mdash;<% if user_signed_in? %>
+      <%= post.user.name %>
+    <% else %>
+      <%= post.anonymous_name %>
+    <% end %>
+  </footer>
+</div>
